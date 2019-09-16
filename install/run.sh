@@ -38,8 +38,8 @@ if [ ! -d $APPS_PATH/android-studio ]; then
         exit 1
     fi
 
-    # showGreen "\n[ANDROID-STUDIO] Remove archive"
-    # rm -f android-studio.tar.gz
+    showGreen "\n[ANDROID-STUDIO] Remove archive"
+    rm -f android-studio.tar.gz
 
     showGreen "\n[ANDROID-STUDIO] Done"
 fi
@@ -63,8 +63,8 @@ if [ ! -d $APPS_PATH/flutter ]; then
         exit 1
     fi
 
-    # showGreen "\n[FLUTTER] Remove archive"
-    # rm -f flutter.tar.xz
+    showGreen "\n[FLUTTER] Remove archive"
+    rm -f flutter.tar.xz
 
     showGreen "\n[FLUTTER] Deactivate analytics"
     flutter config --no-analytics
