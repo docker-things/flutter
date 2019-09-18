@@ -37,9 +37,7 @@ RUN_ARGS=(
     --cpu-shares=1024
     --shm-size 2g
 
-    # --privileged
-
-    --device=/dev/kvm
+    --privileged
 
     -v $(pwd)/data/home:/home/$(whoami)
 
