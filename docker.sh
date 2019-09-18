@@ -42,6 +42,7 @@ function scriptRun() {
         "remove")      scriptRemove $@     ;;
         "restore")     scriptRestore $@    ;;
         "install")     scriptInstall $@    ;;
+        "clear-data")  scriptClearData $@  ;;
         "set-default") scriptSetDefault $@ ;;
         *)             showUsage $@        ;;
     esac
@@ -359,6 +360,13 @@ function scriptSetDefault() {
     else
         showYellow "[WARN] App of \"$APP_GENERIC_NAME\" type can't be set as default! Functionality not implemented!"
     fi
+}
+
+function scriptClearData() {
+    showGreen "\nRemoving data for $PROJECT_NAME..."
+    rm -rf ./data
+    showGreen "\nRebuilding needed dirs..."
+    buildRuntimeVolumeDirs
 }
 
 # Make the app runnable from the host system
