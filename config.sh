@@ -13,10 +13,11 @@ FIFO_PATH="/tmp/docker-things/fifo"
 PROJECT_NAME="flutter"
 
 # Meta to set in the .desktop file
-APP_GENERIC_NAME="SDK"
-APP_CATEGORIES=""
-APP_MIME_TYPE=""
-APP_PARAM=""
+APP_GENERIC_NAME="IDE"
+APP_CATEGORIES="Development;IDE;"
+APP_TERMINAL="true"
+APP_MIME_TYPE="text/plain;"
+APP_PARAM="%f"
 
 # BUILD ARGS
 BUILD_ARGS=(
