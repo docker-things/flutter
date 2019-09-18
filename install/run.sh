@@ -116,6 +116,10 @@ done
 showGreen "Close the first unused screen"
 screen -S "$SCREEN_NAME" -p 0 -X stuff $'exit\r'
 
+# Get kvm access
+showGreen "Get kvm access"
+sudo chown $DOCKER_USERNAME /dev/kvm
+
 # Connect to screen
 showGreen "Connect to screen"
 screen -R

@@ -9,19 +9,17 @@ RUN apt-get update \
         git \
         libglu1-mesa \
         libxtst6 \
+        mesa-utils \
+        qemu-kvm \
+        screen \
+        sudo \
         unzip \
         wget \
-        screen \
+        xserver-xorg-video-all \
         xz-utils \
  && apt-get clean -y \
  && apt-get autoclean -y \
  && apt-get autoremove -y
-
-# INSTALL DEPENDENCIES
-RUN apt-get update \
- && apt-get install -y --no-install-recommends \
-        qemu-kvm \
- && adduser $DOCKER_USERNAME kvm
 
 # SET APPS PATH
 ENV APPS_PATH "/home/$DOCKER_USERNAME/apps"
