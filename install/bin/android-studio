@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cd $APPS_PATH/android-studio/bin/
-bash studio.sh
+bash studio.sh $@

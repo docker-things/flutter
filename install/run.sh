@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# If we've got params
+if [ "$1" != "" ]; then
+    android-studio $@
+    exit
+fi
+
 # Output functions
 function showNormal() { echo -e "\033[00m$@"; }
 function showGreen() { echo -e "\033[01;32m$@\033[00m"; }
