@@ -39,6 +39,8 @@ RUN_ARGS=(
 
     # --privileged
 
+    --device=/dev/kvm
+
     -v $(pwd)/data/home:/home/$(whoami)
 
     -v $XDG_RUNTIME_DIR/pulse:$XDG_RUNTIME_DIR/pulse
