@@ -41,7 +41,10 @@ RUN_ARGS=(
 
     --gpus all
 
-    # --device=/dev/kvm
+    --device=/dev/kvm
+
+    --device=/dev/dri/card0:/dev/dri/card0
+    --device /dev/dri/renderD128:/dev/dri/renderD128
 
     -v $(pwd)/data/home:/home/$(whoami)
 
