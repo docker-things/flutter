@@ -1,0 +1,5 @@
+#!/bin/bash
+
+AVD="`/home/$DOCKER_USERNAME/Android/Sdk/emulator/emulator -list-avds | tail -n1`"
+
+/home/$DOCKER_USERNAME/Android/Sdk/emulator/emulator -avd "$AVD"
