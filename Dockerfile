@@ -38,6 +38,7 @@ COPY install/bin /usr/bin
 RUN chmod +x \
     /run.sh \
     /usr/bin/android-studio \
+    /usr/bin/android-emulator \
     /usr/bin/flutter-doctor
 
 # Required for nvidia-docker v1
