@@ -100,6 +100,7 @@ SCREEN_PID="`ps ax | grep screen | grep -v grep | awk '{print $1}'`"
 # Services to launch
 SERVICES=(
     android-studio
+    android-emulator
     flutter-doctor
     )
 
