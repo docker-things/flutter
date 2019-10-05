@@ -39,7 +39,7 @@ RUN_ARGS=(
 
     --privileged
 
-    --gpus all
+    # --gpus all
 
     --device=/dev/kvm
 
