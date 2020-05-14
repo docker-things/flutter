@@ -10,6 +10,8 @@ RUN apt-get update \
         libglu1-mesa \
         libxtst6 \
         mesa-utils \
+        openssh-client \
+        iputils-ping \
         qemu-kvm \
         screen \
         sudo \
