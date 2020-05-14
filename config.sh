@@ -46,6 +46,7 @@ RUN_ARGS=(
     --device=/dev/dri/card0:/dev/dri/card0
     --device /dev/dri/renderD128:/dev/dri/renderD128
 
+    -v $HOME:/home/host
     -v $(pwd)/data/home:/home/$(whoami)
 
     -v $XDG_RUNTIME_DIR/pulse:$XDG_RUNTIME_DIR/pulse
