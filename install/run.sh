@@ -7,10 +7,10 @@
 # fi
 
 # Output functions
-function showNormal() { echo -e "\033[00m$@"; }
-function showGreen() { echo -e "\033[01;32m$@\033[00m"; }
-function showYellow() { echo -e "\033[01;33m$@\033[00m"; }
-function showRed() { echo -e "\033[01;31m$@\033[00m"; }
+function showNormal() { echo -e "\033[00m$@"; notify-send Flutter "$@"; }
+function showGreen() { echo -e "\033[01;32m$@\033[00m"; notify-send Flutter "$@"; }
+function showYellow() { echo -e "\033[01;33m$@\033[00m"; notify-send Flutter "$@"; }
+function showRed() { echo -e "\033[01;31m$@\033[00m"; notify-send Flutter "$@"; }
 
 # Create .bashrc if not present
 if [ ! -f ~/.bashrc ]; then
