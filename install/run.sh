@@ -84,6 +84,10 @@ if [ ! -d $APPS_PATH/flutter ]; then
     showGreen "\n[FLUTTER] Done"
 fi
 
+# Get kvm access
+showGreen "Get kvm access"
+sudo chown $DOCKER_USERNAME /dev/kvm
+
 android-studio $@
 
 # # Make sure screens start in the home dir
