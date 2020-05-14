@@ -92,7 +92,7 @@ SCREEN_NAME="flutter"
 
 # Launch daemon
 showGreen "Launch screen daemon"
-screen -dmS "$SCREEN_NAME" -t "smarthome" -s /bin/bash
+screen -dmS "$SCREEN_NAME" -t "$SCREEN_NAME" -s /bin/bash
 
 # Keep the process id
 SCREEN_PID="`ps ax | grep screen | grep -v grep | awk '{print $1}'`"
