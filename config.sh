@@ -15,7 +15,7 @@ PROJECT_NAME="flutter"
 # Meta to set in the .desktop file
 APP_GENERIC_NAME="IDE"
 APP_CATEGORIES="Development;IDE;"
-APP_TERMINAL="true"
+APP_TERMINAL="false"
 APP_MIME_TYPE="text/plain;"
 APP_PARAM="%f"
 
@@ -56,7 +56,7 @@ RUN_ARGS=(
     -e ANDROID_STUDIO_DOWNLOAD_URL="https://dl.google.com/dl/android/studio/ide-zips/3.5.0.21/android-studio-ide-191.5791312-linux.tar.gz"
 
     --rm
-    -it
+    -d
     )
 
 # NVIDIA REQUIRED - HARDWARE ACCELERATION
