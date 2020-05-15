@@ -25,8 +25,8 @@ RUN apt-get update \
 # SET APPS PATH
 ENV APPS_PATH "/home/$DOCKER_USERNAME/apps"
 
-# ADD FLUTTER TO PATH
-ENV PATH "$PATH:$APPS_PATH/flutter/bin"
+# ADD FLUTTER & ADB TO PATH
+ENV PATH "$PATH:$APPS_PATH/flutter/bin:/home/$DOCKER_USERNAME/Android/Sdk/platform-tools"
 
 ENV QT_X11_NO_MITSHM 1
 
