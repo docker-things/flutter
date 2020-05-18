@@ -1,6 +1,5 @@
 FROM gui-apps-base:18.04
 MAINTAINER Gabriel Ionescu <gabi.ionescu+dockerthings@protonmail.com>
-gabi@flutter:/home/host/work/titan/flutter/clients/claro$ sudo apt-get install software-properties-common
 
 # INSTALL DEPENDENCIES
 RUN apt-get update \
