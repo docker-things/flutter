@@ -1,4 +1,4 @@
-FROM gui-apps-base:18.04
+FROM gui-apps-base:20.04
 MAINTAINER Gabriel Ionescu <gabi.ionescu+dockerthings@protonmail.com>
 
 # INSTALL DEPENDENCIES
@@ -19,6 +19,7 @@ RUN apt-get update \
         qemu-kvm \
         screen \
         sudo \
+        scrcpy \
         unzip \
         wget \
         xz-utils \
