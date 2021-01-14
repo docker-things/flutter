@@ -177,7 +177,7 @@ function scriptStart() {
     buildRuntimeVolumeDirs
     buildRuntimeFifo
     TMP_NAME="`echo "$PROJECT_NAME" | awk -F':' '{print $1}'`"
-    CONTAINER_ID="`$DOCKER_CMD ps -a | grep "$TMP_NAME" | awk '{print $1}'`"
+    CONTAINER_ID="`$DOCKER_CMD ps -a | grep " $TMP_NAME " | awk '{print $1}'`"
     # If NOT running
     if [ "$CONTAINER_ID" == "" ]; then
         $DOCKER_CMD run ${RUN_ARGS[@]} -v $FIFO_PATH:/tmp/fifo --name="$TMP_NAME" "$TMP_NAME" ${@:3}
@@ -192,7 +192,7 @@ function scriptStart() {
 function scriptLogs() {
     showGreen "\nShowing logs for $PROJECT_NAME:"
     TMP_NAME="`echo "$PROJECT_NAME" | awk -F':' '{print $1}'`"
-    CONTAINER_ID="`$DOCKER_CMD ps -a | grep "$TMP_NAME" | awk '{print $1}'`"
+    CONTAINER_ID="`$DOCKER_CMD ps -a | grep " $TMP_NAME " | awk '{print $1}'`"
     if [ "$CONTAINER_ID" == "" ]; then
         showRed "\nCouldn't find container id! Image status: `scriptStatus`\n"
         exit 1
@@ -222,7 +222,7 @@ function scriptConnect() {
     fi
     showGreen "\nLaunching $CMD in $PROJECT_NAME:"
     TMP_NAME="`echo "$PROJECT_NAME" | awk -F':' '{print $1}'`"
-    CONTAINER_ID="`$DOCKER_CMD ps -a | grep "$TMP_NAME" | awk '{print $1}'`"
+    CONTAINER_ID="`$DOCKER_CMD ps -a | grep " $TMP_NAME " | awk '{print $1}'`"
     if [ "$CONTAINER_ID" == "" ]; then
         showRed "\nCouldn't find container id! Image status: `scriptStatus`\n"
         exit 1
@@ -236,7 +236,7 @@ function scriptConnect() {
 function scriptStop() {
     showYellow "\nStop $PROJECT_NAME image..."
     TMP_NAME="`echo "$PROJECT_NAME" | awk -F':' '{print $1}'`"
-    CONTAINER_ID="`$DOCKER_CMD ps -a | grep "$TMP_NAME" | awk '{print $1}'`"
+    CONTAINER_ID="`$DOCKER_CMD ps -a | grep " $TMP_NAME " | awk '{print $1}'`"
     if [ "$CONTAINER_ID" == "" ]; then
         showRed "\nCouldn't find container id! Image status: `scriptStatus`\n"
         [ "$1" != 'no-exit' ] && exit 1
@@ -250,7 +250,7 @@ function scriptStop() {
 function scriptKill() {
     showYellow "\nKill $PROJECT_NAME image..."
     TMP_NAME="`echo "$PROJECT_NAME" | awk -F':' '{print $1}'`"
-    CONTAINER_ID="`$DOCKER_CMD ps -a | grep "$TMP_NAME" | awk '{print $1}'`"
+    CONTAINER_ID="`$DOCKER_CMD ps -a | grep " $TMP_NAME " | awk '{print $1}'`"
     if [ "$CONTAINER_ID" == "" ]; then
         showRed "\nCouldn't find container id! Image status: `scriptStatus`\n"
         exit 1
