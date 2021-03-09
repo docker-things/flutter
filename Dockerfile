@@ -46,7 +46,10 @@ RUN chmod +x \
     /run.sh \
     /usr/bin/android-studio \
     /usr/bin/android-emulator \
-    /usr/bin/flutter-doctor
+    /usr/bin/flutter-doctor \
+ && sed -i 's/^kvm:x:107:.*$/kvm:x:107:'$DOCKER_USERNAME'/g' /etc/group \
+ && sed -i 's/^render:x:108:.*$/render:x:108:'$DOCKER_USERNAME'/g' /etc/group
+
 
 # Required for nvidia-docker v1
 # RUN echo "/usr/local/nvidia/lib" >> /etc/ld.so.conf.d/nvidia.conf && \
