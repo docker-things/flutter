@@ -84,6 +84,9 @@ if [ ! -d $APPS_PATH/flutter ]; then
     showGreen "\n[FLUTTER] Done"
 fi
 
+# Remove emulator locks
+rm -f $HOME/.android/avd/*/*.lock
+
 android-studio $@
 
 # # Make sure screens start in the home dir
