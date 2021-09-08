@@ -1,10 +1,14 @@
-FROM gui-apps-base:20.04
+FROM gui-apps-base:21.04
 MAINTAINER Gabriel Ionescu <gabi.ionescu+dockerthings@protonmail.com>
 
 # INSTALL DEPENDENCIES
-RUN apt-get update \
+RUN echo " > Update repos" \
+ && apt-get update \
+ \
+ && echo " > Install dependencies" \
  && apt-get install -y --no-install-recommends \
         software-properties-common \
+        gpg-agent \
  && add-apt-repository -y ppa:git-core/ppa \
  && apt-get update \
  && apt-get install -y --no-install-recommends \
@@ -20,9 +24,22 @@ RUN apt-get update \
         screen \
         sudo \
         scrcpy \
+        zip \
+        zipalign \
         unzip \
         wget \
         xz-utils \
+ \
+ && echo " > Install Google Chrome" \
+ && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /tmp/google-chrome.deb \
+ && apt install -y \
+       /tmp/google-chrome.deb \
+ \
+ && echo " > Cleanup" \
+ && rm -f /tmp/google-chrome.deb \
+ && apt-get remove -y \
+       software-properties-common \
+       gpg-agent \
  && apt-get clean -y \
  && apt-get autoclean -y \
  && apt-get autoremove -y

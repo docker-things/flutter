@@ -53,7 +53,7 @@ RUN_ARGS=(
     -v $XDG_RUNTIME_DIR/pulse:$XDG_RUNTIME_DIR/pulse
     -e PULSE_SERVER=unix:$XDG_RUNTIME_DIR/pulse/native
 
-    -e FLUTTER_DOWNLOAD_URL="https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_1.22.4-stable.tar.xz"
+    -e FLUTTER_DOWNLOAD_URL="https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_2.2.3-stable.tar.xz"
     -e ANDROID_STUDIO_DOWNLOAD_URL="https://dl.google.com/dl/android/studio/ide-zips/3.6.3.0/android-studio-ide-192.6392135-linux.tar.gz"
 
     --rm
